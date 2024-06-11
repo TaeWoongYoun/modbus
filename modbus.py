@@ -17,8 +17,7 @@ try:
             if response:
                 # 응답 길이 확인
                 if len(response) >= 9:  # 최소한 거리, 습도, 온도의 응답이 있는 경우
-                    data_length = response[2]
-                    expected_length = data_length + 5  # 데이터 길이 + 주소(1) + 기능코드(1) + 데이터길이(1) + CRC(2)
+                    expected_length = response[2] + 5  # 데이터 길이 + 주소(1) + 기능코드(1) + 데이터길이(1) + CRC(2)
                     if len(response) >= expected_length:
                         # 데이터 해석
                         humidity = response[3] * 256 + response[4]
