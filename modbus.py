@@ -14,7 +14,6 @@ try:
         while response_count < max_responses:
             # 시리얼 포트에서 데이터 읽기
             ser.write(b'\x01\x03\x00\x00\x00\x03\x05\xCB')  # 모드버스 RTU 프레임
-            time.sleep(0.1)
             response = ser.read(255)  # 최대한 많은 응답을 읽음 (255바이트)
             if response:
                 # 응답 길이 확인
