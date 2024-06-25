@@ -3,7 +3,7 @@ import serial
 
 # 시리얼 포트 설정
 ser = serial.Serial(
-    port='COM3',
+    port='COM6',
     baudrate=9600,
     timeout=1
 )
