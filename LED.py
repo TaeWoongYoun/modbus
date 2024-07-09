@@ -7,17 +7,17 @@ instrument.serial.timeout = 3
 instrument.serial.stopbits = 1
 instrument.serial.bytesize = 8
 
-# LED 제어 함수
+# LED 제어
 def control_led(color):
     try:
         if color == 0:
             # 붉은색 LED 제어
             instrument.write_bit(0, True)
-            instrument.write_bit(1, False)
+            # instrument.write_bit(1, False)
             print("붉은색 LED를 켰습니다.")
         elif color == 1:
             # 초록색 LED 제어
-            instrument.write_bit(0, False)
+            # instrument.write_bit(0, False)
             instrument.write_bit(1, True)
             print("초록색 LED를 켰습니다.")
     except:
