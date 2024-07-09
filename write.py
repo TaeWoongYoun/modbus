@@ -8,7 +8,7 @@ instrument.serial.stopbits = 1
 instrument.serial.bytesize = 8
 
 # 모드버스에 입력되는 숫자
-digital_segment_value = 1007
+digital_segment_value = 9999
 
 for i in range(0, 3):
     try:
