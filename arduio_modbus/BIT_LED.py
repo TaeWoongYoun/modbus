@@ -14,4 +14,4 @@ def write_bit():
             print('색상 설정 완료')
             break
         else:
-            print("유효한 숫자를 입력하세요. ( RED:0 / GREEN:1 )")
+            print("유효한 숫자를 입력하세요.")
