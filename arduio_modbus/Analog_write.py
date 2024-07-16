@@ -9,6 +9,6 @@ def write_register():
             # 모드버스 RTU 프레임 전송 및 데이터 쓰기
             instrument.write_register(3, digital_segment_value)
             print(f"{digital_segment_value} 값을 쓰기 성공")
-            break  # 유효한 입력 후 루프 종료
+            break
         else:
             print("유효한 네 자리 숫자를 입력하세요.")
