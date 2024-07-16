@@ -16,7 +16,5 @@ while True:
         elif number == 3:
             print("LED모드를 선택하셨습니다.")
             BIT_LED.write_bit()
-        else:
-            print("숫자 1(read), 2(write), 3(LED) 중 하나를 입력하세요: ")
     else:
-        print("유효한 숫자를 입력하세요.")
+        print("숫자를 입력하세요.")
