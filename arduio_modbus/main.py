@@ -1,13 +1,6 @@
-import minimalmodbus
-import time
+import serial_port
+instrument = serial_port.set_port('COM8')
 
-# 시리얼 포트 설정
-instrument = minimalmodbus.Instrument('COM8', 1)
-instrument.serial.baudrate = 9600
-instrument.serial.timeout = 1
-instrument.serial.stopbits = 1
-instrument.serial.bytesize = 8
-time.sleep(2)
 while True:
     number = input("숫자 1(read), 2(write), 3(LED) 중 하나를 입력하세요: ")
     
