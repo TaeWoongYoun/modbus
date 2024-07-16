@@ -4,7 +4,7 @@ import tkinter.simpledialog as simpledialog
 import tkinter.messagebox as messagebox
 
 # 시리얼 포트 설정
-instrument = minimalmodbus.Instrument('COM6', 1)
+instrument = minimalmodbus.Instrument('COM7', 1)
 instrument.serial.baudrate = 9600
 instrument.serial.timeout = 1
 instrument.serial.stopbits = 1
