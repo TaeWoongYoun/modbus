@@ -1,5 +1,4 @@
 import minimalmodbus
-import time
 
 # 시리얼 포트 설정
 def set_port():
@@ -8,5 +7,4 @@ def set_port():
     instrument.serial.timeout = 1
     instrument.serial.stopbits = 1
     instrument.serial.bytesize = 8
-    time.sleep(0.5)
     return instrument
