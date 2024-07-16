@@ -8,5 +8,5 @@ def set_port():
     instrument.serial.timeout = 1
     instrument.serial.stopbits = 1
     instrument.serial.bytesize = 8
-    time.sleep(1)
+    time.sleep(0.5)
     return instrument
