@@ -7,3 +7,4 @@ def read_register():
     print(f"거리: {response[0]}")
     print(f"습도: {response[1]}")
     print(f"온도: {response[2]}")
+    return response[0], response[1], response[2]
