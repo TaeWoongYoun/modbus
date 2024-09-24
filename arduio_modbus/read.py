@@ -18,11 +18,9 @@ try:
     while True:
         data = instrument.read_registers(0, 3)
         print(f"거리: {data[0]} / 습도: {data[1]} / 온도: {data[2]}")
-        # sql = "INSERT INTO program (Distance, Humidity, Temperature) VALUES ('"+data[0]+"', '"+data[1]+"', '"+data[2]+"')"
-        sql = "INSERT INTO program (Distance, Humidity, Temperature) VALUES (%s, %s, %s)"
-        cursor.execute(sql, (data[0], data[1], data[2]))
+        sql = "INSERT INTO program (Distance, Humidity, Temperature) VALUES ('"+str(data[0])+"', '"+str(data[1])+"', '"+str(data[2])+"')"
+        cursor.execute(sql)
         conn.commit()
         time.sleep(15)
-        
 finally:
     conn.close()
