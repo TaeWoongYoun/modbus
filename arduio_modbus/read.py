@@ -9,18 +9,20 @@ instrument.serial.baudrate = 9600
 instrument.serial.timeout = 1
 instrument.serial.stopbits = 1
 instrument.serial.bytesize = 8
-
 time.sleep(3)
 
 conn = pymysql.connect(host='localhost', user='root', password='1234', db='Analog_read', charset='utf8')
 cursor = conn.cursor()
 
 try:
-    response = instrument.read_registers(0, 3)
-    print(f"거리: {response[0]} / 습도: {response[1]} / 온도: {response[2]}")
-    # sql = "INSERT INTO program (Distance, Humidity, Temperature) VALUES ('"+response[0]+"', '"+response[1]+"', '"+response[2]+"')"
-    sql = "INSERT INTO program (Distance, Humidity, Temperature) VALUES (%s, %s, %s)"
-    cursor.execute(sql, (response[0], response[1], response[2]))
-    conn.commit()
+    while True:
+        response = instrument.read_registers(0, 3)
+        print(f"거리: {response[0]} / 습도: {response[1]} / 온도: {response[2]}")
+        # sql = "INSERT INTO program (Distance, Humidity, Temperature) VALUES ('"+response[0]+"', '"+response[1]+"', '"+response[2]+"')"
+        sql = "INSERT INTO program (Distance, Humidity, Temperature) VALUES (%s, %s, %s)"
+        cursor.execute(sql, (response[0], response[1], response[2]))
+        conn.commit()
+        time.sleep(15)
+        
 finally:
     conn.close()
