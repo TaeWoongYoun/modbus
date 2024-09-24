@@ -16,11 +16,11 @@ cursor = conn.cursor()
 
 try:
     while True:
-        response = instrument.read_registers(0, 3)
-        print(f"거리: {response[0]} / 습도: {response[1]} / 온도: {response[2]}")
-        # sql = "INSERT INTO program (Distance, Humidity, Temperature) VALUES ('"+response[0]+"', '"+response[1]+"', '"+response[2]+"')"
+        data = instrument.read_registers(0, 3)
+        print(f"거리: {data[0]} / 습도: {data[1]} / 온도: {data[2]}")
+        # sql = "INSERT INTO program (Distance, Humidity, Temperature) VALUES ('"+data[0]+"', '"+data[1]+"', '"+data[2]+"')"
         sql = "INSERT INTO program (Distance, Humidity, Temperature) VALUES (%s, %s, %s)"
-        cursor.execute(sql, (response[0], response[1], response[2]))
+        cursor.execute(sql, (data[0], data[1], data[2]))
         conn.commit()
         time.sleep(15)
         
