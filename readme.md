@@ -14,8 +14,8 @@
 - `modbus_read/`
   - `read.py` : 거리, 습도, 온도를 읽고 MariaDB에 데이터를 저장
 - `venv/` : (여기에 가상환경 관련 파일이 위치합니다)
-- `arduino.py` : `arduino_modbus` 프로그램을 만들기 전 함수를 사용하지 않은 프로그램. 이 프로그램을 리팩토링하여 `arduino_modbus`가 탄생함
-- `arduinoUI.py` : `arduino.py`에 UI를 추가
+- `arduino.py` : arduino_modbus 프로그램을 만들기 전 함수를 사용하지 않은 프로그램. 이 프로그램을 리팩토링하여 arduino_modbus가 탄생함
+- `arduinoUI.py` : arduino.py에 UI를 추가
 - `LED.py` : 간단한 LED 제어 프로그램
 - `main-LED.py` : 코드를 수정하지 않고 LED를 사용자가 제어하는 프로그램
 - `mysql.py` : SQL 사용 테스트 프로그램
